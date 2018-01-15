@@ -1,5 +1,5 @@
 FROM python:3.6-alpine
-LABEL "maintainer"="Coaxial https://64b.it"
+LABEL "maintainer"="Coaxial, https://64b.it"
 
 ENV TARSNAP_VERSION 1.0.39
 ENV TARSNAP_SHA256 5613218b2a1060c730b6c4a14c2b34ce33898dd19b38fb9ea0858c5517e42082
