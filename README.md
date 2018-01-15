@@ -36,6 +36,11 @@ docs](https://github.com/miracle2k/tarsnapper#using-a-configuration-file)) in a
 configuration file mounted at `/etc/tarsnapper.conf` and you're off to the
 races.
 
+## Alternatives
+
+- [dangmai/tarsnapper](https://hub.docker.com/r/dangmai/tarsnapper/)
+- [atmoz/tarsnap](https://hub.docker.com/r/atmoz/tarsnap/)
+
 ## Contributing
 
 PRs welcome, fork the repo and hack away.
