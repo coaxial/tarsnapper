@@ -4,9 +4,9 @@ This container lets you run Tarsnapper on top of tarsnap. It uses configuration
 files for tarsnap and tarsnapper, mounted inside the container.
 
 It differs from [Dangmai's
-conatainer](https://github.com/dangmai/docker-tarsnapper) in that it is based
+container](https://github.com/dangmai/docker-tarsnapper) in that it is based
 on Alpine 3.6, and doesn't randomize the cron running period if not supplied.
-It also runs `make` only, since `make` expires old backups as well. The image
+It runs `make` only, since `make` expires old backups as well. The image
 also has tags (by tarnsapper version.)
 
 This image is 102MB, vs 306MB for its Debian-based counterpart.
@@ -25,13 +25,13 @@ docker run \
 -v /path/to/backup:/backup:ro \
 -v tarnsap_cache:/usr/local/tarsnap-cache \
 -e "BACKUP_PERIODICITY=* 3 * * *" \
-coaxial/tarsnapper
+coaxial/tarsnapper:0.4
 ```
 
 If not set, `BACKUP_PERIODICITY` defaults to `* * * * 7` which translates to
-making a backup every week on Sundays.
+making a backup weekly on Sundays.
 
-Define your images (cf. [tarsnapper
+Define your jobs (cf. [tarsnapper
 docs](https://github.com/miracle2k/tarsnapper#using-a-configuration-file)) in a
 configuration file mounted at `/etc/tarsnapper.conf` and you're off to the
 races.
