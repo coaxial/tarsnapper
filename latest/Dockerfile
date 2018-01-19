@@ -24,9 +24,6 @@ RUN pip install tarsnapper==$TARSNAPPER_VERSION &&\
   apk add --no-cache dcron &&\
   mkdir /etc/cron.d
 
-VOLUME /etc/tarsnap.conf
-VOLUME /etc/tarsnapper.conf
-VOLUME /root/tarsnap.key
 VOLUME /backup
 
 RUN echo "${BACKUP_PERIODICITY:-'* * * * 7'} root tarsnap --fsck && tarsnapper -c /etc/tarsnapper.conf make >> /var/log/cron.log 2&>1" >> etc/cron.d/tarsnapper
