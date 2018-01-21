@@ -21,7 +21,6 @@ RUN apk add --no-cache gcc libc-dev make openssl openssl-dev zlib-dev e2fsprogs-
 
 # Install tarsnapper
 RUN pip install tarsnapper==$TARSNAPPER_VERSION &&\
-  apk add --no-cache dcron &&\
   mkdir -p /etc/cron.d/tarsnapper &&\
   touch /var/log/tarsnapper-cron.log
 
@@ -29,5 +28,6 @@ VOLUME /backup
 
 ADD ./bootstrap.sh /bootstrap.sh
 ADD ./check-tarsnap-cache.sh /check-tarsnap-cache.sh
+ADD ./run-backup.sh /run-backup.sh
 
 CMD /bootstrap.sh

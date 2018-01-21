@@ -9,7 +9,7 @@ files for tarsnap and tarsnapper, mounted inside the container.
 - Doesn't randomize the cron running time if not supplied
 - Runs `make` only, since `make` expires old backups as well.
 - Images are tagged by tarsnapper versions
-- Only runs `tarsnap --fsck` when there is no cache (it costs money to run since it transfers data from tarsnap)
+- Only runs `tarsnap --fsck` when statring the container vs with every backup (it costs money to run since it transfers data from tarsnap)
 
 ## Tags
 
