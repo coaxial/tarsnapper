@@ -7,8 +7,7 @@ BACKUP_PERIODICITY=${BACKUP_PERIODICITY:-"* * * * 7"}
 
 # using a separate cron file and overwriting it to avoid adding multiple
 # entries every time the container starts
-echo "${BACKUP_PERIODICITY} (echo $(date) && /check-tarsnap-cache.sh && tarsnapper -c /etc/tarsnapper.conf make; echo '-----') >> /var/log/tarsnapper-cron.log 2>&1" > /etc/cron.d/tarsnapper/root
-
+echo "${BACKUP_PERIODICITY}"' (echo "$(date)" && /check-tarsnap-cache.sh && tarsnapper -c /etc/tarsnapper.conf make; echo "-----") >> /var/log/tarsnapper-cron.log 2>&1' > /etc/cron.d/tarsnapper/root
 # check and repair tarsnap cache when starting the container to ensure
 # consistent cache. this costs a bit of money because it transfers data from
 # tarsnap servers but will only run when starting up the container; not with
