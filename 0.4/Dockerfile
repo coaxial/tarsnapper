@@ -23,9 +23,6 @@ RUN apk add --no-cache gcc libc-dev make openssl openssl-dev zlib-dev e2fsprogs-
 RUN pip install tarsnapper==$TARSNAPPER_VERSION &&\
   mkdir -p /etc/cron.d/tarsnapper
 
-# Enable logging via syslog
-RUN rc-update add syslog boot
-
 VOLUME /backup
 
 ADD ./bootstrap.sh /bootstrap.sh
