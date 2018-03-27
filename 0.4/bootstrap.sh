@@ -17,4 +17,7 @@ echo "Done" &&\
 echo "Starting crond" &&\
 crond -c /etc/cron.d/tarsnapper &&\
 echo "Done" &&\
+echo "Starting syslog" &&\
+syslogd &&\
+echo "Done" &&\
 tail -f /var/log/messages
